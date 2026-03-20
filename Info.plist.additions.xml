@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+
+<!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  BAGNEUX MA VILLE — Clés à ajouter dans Info.plist           ║
+  ║  Fichier : ios/App/App/Info.plist                            ║
+  ║  Ajouter ces clés DANS le <dict> principal                   ║
+  ╚══════════════════════════════════════════════════════════════╝
+-->
+
+<plist version="1.0">
+<dict>
+
+  <!-- ── GÉOLOCALISATION ── -->
+  <key>NSLocationWhenInUseUsageDescription</key>
+  <string>Bagneux Ma Ville utilise votre position pour afficher les pharmacies, médecins et services les plus proches de vous.</string>
+
+  <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+  <string>Bagneux Ma Ville utilise votre position pour vous guider vers les services municipaux.</string>
+
+  <!-- ── RÉSEAU ── -->
+  <!-- Autoriser les domaines HTTP non-sécurisés si besoin (OpenStreetMap = HTTPS, OK) -->
+  <key>NSAppTransportSecurity</key>
+  <dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <false/>
+    <key>NSExceptionDomains</key>
+    <dict>
+      <key>tile.openstreetmap.org</key>
+      <dict>
+        <key>NSExceptionAllowsInsecureHTTPLoads</key>
+        <false/>
+        <key>NSIncludesSubdomains</key>
+        <true/>
+      </dict>
+      <key>bagneux92.fr</key>
+      <dict>
+        <key>NSExceptionAllowsInsecureHTTPLoads</key>
+        <false/>
+        <key>NSIncludesSubdomains</key>
+        <true/>
+      </dict>
+      <key>valleesud.fr</key>
+      <dict>
+        <key>NSExceptionAllowsInsecureHTTPLoads</key>
+        <false/>
+        <key>NSIncludesSubdomains</key>
+        <true/>
+      </dict>
+    </dict>
+  </dict>
+
+  <!-- ── APP DISPLAY ── -->
+  <key>UIStatusBarStyle</key>
+  <string>UIStatusBarStyleLightContent</string>
+
+  <key>UIViewControllerBasedStatusBarAppearance</key>
+  <false/>
+
+  <!-- ── ORIENTATION ── -->
+  <key>UISupportedInterfaceOrientations</key>
+  <array>
+    <string>UIInterfaceOrientationPortrait</string>
+  </array>
+  <key>UISupportedInterfaceOrientations~ipad</key>
+  <array>
+    <string>UIInterfaceOrientationPortrait</string>
+    <string>UIInterfaceOrientationPortraitUpsideDown</string>
+    <string>UIInterfaceOrientationLandscapeLeft</string>
+    <string>UIInterfaceOrientationLandscapeRight</string>
+  </array>
+
+  <!-- ── NOTIFICATIONS LOCALES ── -->
+  <!-- Pas de clé spéciale requise, géré par Capacitor LocalNotifications -->
+
+</dict>
+</plist>

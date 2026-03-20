@@ -1,0 +1,24 @@
+{
+  "name": "bagneux-ma-ville",
+  "version": "1.0.0",
+  "description": "Application iOS pour la ville de Bagneux (92)",
+  "author": "Michel Garlandat <michel.garlandat@me.com>",
+  "private": true,
+  "scripts": {
+    "build": "echo 'Static HTML app — rien à compiler'",
+    "sync": "npx cap sync ios",
+    "open": "npx cap open ios"
+  },
+  "dependencies": {
+    "@capacitor/core": "^6.0.0",
+    "@capacitor/ios": "^6.0.0",
+    "@capacitor/browser": "^6.0.0",
+    "@capacitor/geolocation": "^6.0.0",
+    "@capacitor/local-notifications": "^6.0.0",
+    "@capacitor/status-bar": "^6.0.0",
+    "@capacitor/splash-screen": "^6.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.0.0"
+  }
+}

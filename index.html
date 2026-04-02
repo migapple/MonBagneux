@@ -100,8 +100,10 @@
   }
   .tab-icon { font-size: 19px; transition: transform 0.2s; }
   .tab-label { font-size: 9px; font-weight: 500; color: var(--gray); transition: color 0.2s; }
-  .tab.active .tab-label { color: var(--blue); }
-  .tab.active .tab-icon { transform: scale(1.1); }
+  .tab.active .tab-label { color: var(--blue); font-weight: 700; }
+  .tab.active .tab-icon { transform: scale(1.15); }
+  .tab.active { border-top: 3px solid var(--blue); background: rgba(35,77,150,0.08); }
+  .tab.active .tab-icon { filter: opacity(1); }
   .tab:active .tab-icon { transform: scale(0.92); }
 
   /* ── PAGES ── */
@@ -800,7 +802,7 @@
       </div>
     </div>
 
-    <div class="card card-hero" style="text-align:center; padding: 20px;">
+    <div class="card card" style="text-align:center; padding: 20px;">
       <div style="font-size:36px; margin-bottom:8px;">🌿</div>
       <div style="font-family:'Playfair Display',serif; font-size:16px; font-weight:700; margin-bottom:6px;">Coulée Verte du Sud-Parisien</div>
       <div style="font-size:12px; opacity:0.8; line-height:1.6;">Bagneux est traversée par la Coulée verte, qui suit en partie la via Turonensis — l'un des quatre chemins français de Saint-Jacques-de-Compostelle.</div>
@@ -866,13 +868,7 @@
   </div>
 
   <!-- ── OVERLAY PLAN DES QUARTIERS ── -->
-  <div id="map-quartier-overlay" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.92);overflow-y:auto;-webkit-overflow-scrolling:touch;">
-
-    <!-- BOUTON FERMER — EN HAUT, dans le flux normal, pas de fixed -->
-    <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;background:rgba(0,0,0,0.7);">
-      <button onclick="closeMapQuartier()" style="background:#e84040;border:none;color:white;font-size:22px;font-weight:700;width:48px;height:48px;border-radius:12px;cursor:pointer;flex-shrink:0;">✕</button>
-      <div id="map-quartier-title" style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:white;flex:1;"></div>
-    </div>
+  <div id="map-quartier-overlay" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.92);overflow-y:scroll;overscroll-behavior:contain;">
 
     <!-- Carte -->
     <div style="padding:12px 12px 0;">
@@ -1128,10 +1124,11 @@
 
     <div class="service-group-title">Éducation — Inscription</div>
     <div class="service-list">
-      <div class="service-item" onclick="openLink('https://www.bagneux92.fr/13-406/actualites/fiche/inscriptions-rentree-scolaire-2026-2027.htm')">
+      <div class="service-item" onclick="openLink(''https://www.bagneux92.fr/13-406/actualites/fiche/inscriptions-rentree-scolaire-2026-2027.htm')">
         <div class="svc-icon" style="background:#fff3e0;">📝</div>
         <div class="svc-info">
           <div class="svc-name">Inscription scolaire</div>
+          <div class="svc-detail">avant le 30 avril</div>
         </div>
         <div class="svc-arrow">›</div>
       </div>
@@ -1443,7 +1440,7 @@
 
     <div class="service-group-title">Transports</div>
     <div class="service-list">
-      <div class="service-item" onclick="openLink('https://www.ratp.fr/plan-de-metro')">
+      <div class="service-item" onclick="openLink('https://www.transilien.com/fr/page-lignes/metro-4')">
         <div class="svc-icon" style="background:#e8edf5;">🚇</div>
         <div class="svc-info">
           <div class="svc-name">Métro Ligne 4 & 15</div>
@@ -1451,7 +1448,7 @@
         </div>
         <div class="svc-arrow">›</div>
       </div>
-      <div class="service-item" onclick="openLink('https://www.ratp.fr/titres-et-tarifs/passer-en-zone-3')">
+      <div class="service-item" onclick="openLink('https://www.ratp.fr/horaires-bus')">
         <div class="svc-icon" style="background:#fff0e8;">🚌</div>
         <div class="svc-info">
           <div class="svc-name">Bus RATP</div>
@@ -1467,7 +1464,7 @@
         </div>
         <div class="svc-arrow">›</div>
       </div>
-      <div class="service-item" onclick="openLink('https://www.ile-de-france-mobilites.fr')">
+      <div class="service-item" onclick="openLink('https://www.iledefrance-mobilites.fr')">
         <div class="svc-icon" style="background:#e8f0e8;">🗓️</div>
         <div class="svc-info">
           <div class="svc-name">Île-de-France Mobilités</div>
@@ -2544,7 +2541,7 @@
       </div>
       <div class="service-item" onclick="openLink('https://www.bagneux92.fr/91/cadre-de-vie-transition-ecologique/commerces/les-marches.htm')">
         <div class="svc-icon" style="background:#e8f5e8;">🏪</div>
-        <div class="svc-info"><div class="svc-name">Marchés</div><div class="svc-detail">2 marché à Bagneux</div></div>
+        <div class="svc-info"><div class="svc-name">Marché Léo-Ferré</div><div class="svc-detail">2 marchés à Bagneux</div></div>
         <div class="svc-arrow">›</div>
       </div>
     </div>
@@ -2585,7 +2582,7 @@
     </div>
 
     <!-- ── Budget participatif ── -->
-    <div class="card card-gold" style="margin-top:14px;margin-bottom:0;">
+    <div class="card-gold" style="margin-top:14px;margin-bottom:0;">
       <div style="font-family:'Playfair Display',serif;font-size:15px;font-weight:700;margin-bottom:8px;">💡 Budget Participatif</div>
       <p style="font-size:13px;line-height:1.7;opacity:0.9;">La ville réserve <strong>250 000 €</strong> par an pour financer les idées proposées et votées par les habitants. L'application IRIS elle-même est née du budget participatif 2018 !</p>
       <button onclick="openLink('https://participez.bagneux92.fr')" style="margin-top:10px;background:rgba(255,255,255,0.2);border:none;color:white;padding:8px 16px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;">
@@ -2990,8 +2987,12 @@ function toggleDark() {
 })();
 
 // ── PLAN DES QUARTIERS ───────────────────────────────────────
+function closeMapQuartier() {
+  document.getElementById('map-quartier-overlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
 function showMapQuartier(name) {
-  document.getElementById('map-quartier-title').textContent = '🗺️ Plan des quartiers';
   document.getElementById('map-quartier-overlay').style.display = 'block';
   document.body.style.overflow = 'hidden';
 

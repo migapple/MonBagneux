@@ -1,4 +1,4 @@
-# 🏛️ Bagneux Ma Ville — Guide d'installation Capacitor 6
+# 🏛️ Bagneux Ma Ville
 
 # 1.2 suppression affichage localisation
 
